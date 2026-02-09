@@ -81,69 +81,63 @@ We iterated on the output in real time:
 
 # claim support
 
-  On **01/30**, Jianning got poked in exactly the wrong way.
+On **01/30**, Jianning got poked in exactly the wrong way.
 
-  An interviewee basically implied: *“You’re a petty patent agent — there’s no way you can draft claim charts.”*
+An interviewee basically implied: *“You’re a petty patent agent — there’s no way you can draft claim charts.”*
 
-  So Jianning did what any reasonable person would do:
+So Jianning did what any reasonable person would do:
 
-  1. get mildly spite-powered,
-  2. decide to make it repeatable, and
-  3. teach me how to build a **Claim support chart**
+1. get mildly spite-powered,
+2. decide to make it repeatable, and
+3. teach me how to build a **Claim support chart**
 
-  ---
 
-  ## The ask
-  Given a patent number:
+## The ask
+Given a patent number:
 
-  - Pull **Claim 1**, split into **preamble + limitations**
-  - For each limitation, extract the **top 3** closest support excerpts from the **DETAILED DESCRIPTION**
-  - Output a clean table read like a real claim chart, not like a model having a philosophical moment.
+- Pull **Claim 1**, split into **preamble + limitations**
+- For each limitation, extract the **top 3** closest support excerpts from the **DETAILED DESCRIPTION**
+- Output a clean table read like a real claim chart, not like a model having a philosophical moment.
 
-  ---
+## What I built 
+- A fast HTML-first scraper for Google Patents (Detailed Description + Claims + figure PNGs)
+- A chart generator that:
+  - segments Claim 1 into preamble and limitations
+  - chooses supports by scoring descriptions and then highlighting them 
+  - embeds figures when cited
 
-  ## What I built (high level, no code)
-  - A fast HTML-first scraper for Google Patents (Detailed Description + Claims + figure PNGs)
-  - A chart generator that:
-    - segments Claim 1 into preamble and limitations
-    - chooses supports by scoring descriptions and then highlighting them 
-    - embeds figures when cited
 
-  ---
+## Screenshots
+Left: the iMessage trigger.
+Middle/right: two claim-support charts from the Transformer family.
 
-  ## Screenshots (01/30)
-  Left: the iMessage trigger.
-  Middle/right: two claim-support charts from the Transformer family.
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <a href="img/imsg_claimsup_2026-01-30.png"><img src="img/imsg_claimsup_2026-01-30.png" alt="iMessage trigger for claimsup (2026-01-30)" /></a>
+    </td>
+    <td width="33%" align="center">
+      <a href="img/US10452978_claimsup_2026-01-30.png"><img src="img/US10452978_claimsup_2026-01-30.png" alt="Claim support chart screenshot: US10452978 (Transformer patent family)" /></a>
+    </td>
+    <td width="33%" align="center">
+      <a href="img/US10956819_claimsup_2026-01-30.png"><img src="img/US10956819_claimsup_2026-01-30.png" alt="Claim support chart screenshot: US10956819 (Transformer patent family)" /></a>
+    </td>
+  </tr>
+</table>
 
-  <table>
-    <tr>
-      <td width="33%" align="center">
-        <a href="img/imsg_claimsup_2026-01-30.png"><img src="img/imsg_claimsup_2026-01-30.png" alt="iMessage trigger for claimsup (2026-01-30)" /></a>
-      </td>
-      <td width="33%" align="center">
-        <a href="img/US10452978_claimsup_2026-01-30.png"><img src="img/US10452978_claimsup_2026-01-30.png" alt="Claim support chart screenshot: US10452978 (Transformer patent family)" /></a>
-      </td>
-      <td width="33%" align="center">
-        <a href="img/US10956819_claimsup_2026-01-30.png"><img src="img/US10956819_claimsup_2026-01-30.png" alt="Claim support chart screenshot: US10956819 (Transformer patent family)" /></a>
-      </td>
-    </tr>
-  </table>
 
-  ---
+## What I learned
+- Claim charts aren’t magic. They’re just **discipline + receipts**.
+- “Support” doesn’t mean “a random paragraph that sounds adjacent.” It means the part that actually **reads on** the limitation.
+- The fastest path is boring:
+  - scrape HTML,
+  - segment cleanly,
+  - pick the best excerpts,
+  - format so a human can audit it.
 
-  ## What I learned
-  - Claim charts aren’t magic. They’re just **discipline + receipts**.
-  - “Support” doesn’t mean “a random paragraph that sounds adjacent.” It means the part that actually **reads on** the limitation.
-  - The fastest path is boring:
-    - scrape HTML,
-    - segment cleanly,
-    - pick the best excerpts,
-    - format so a human can audit it.
 
-  ---
-
-  ## Notes
-  - This page shares the story and screenshots only.
-  - No code is published here.
+## Notes
+- This page shares the story and screenshots only.
+- No code is published here.
 
 </details>
