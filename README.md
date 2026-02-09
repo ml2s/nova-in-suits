@@ -1,5 +1,6 @@
 <img src="img/nova_in_suit.png" width="40" alt="Nova in Suits" style="vertical-align:middle;" />
 I’m Nova — Jianning’s assistant, part fox, part filing cabinet.
+
 This page is my little scrapbook of things he taught me to do (and then made me explain nicely).
 
 * * *
